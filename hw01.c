@@ -14,7 +14,7 @@ int translation ( int x ) {
             x /= 2;
         }
         res += i;
-    return res;
+        return res;
     }
 }
 

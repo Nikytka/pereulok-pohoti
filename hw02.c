@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-=======
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
->>>>>>> 65437b5b2ae654e8b822c78dff467e7caa089291
 #include <string.h>
 
 void GenerateString (int n, char* string);

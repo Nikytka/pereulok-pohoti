@@ -22,7 +22,7 @@ int main () {
     const char del[5] = " ,-=";
     char** token = (char**)malloc(10 * sizeof(char*));
     for(int j = 0; j < 10; j++)
-	token[j] = (char*) malloc(10 * sizeof(char));
+        token[j] = (char*) malloc(10 * sizeof(char));
     Split (str, del, token);
     for(int j = 0; j < 7; j++)
         printf("%s\n", token[j]);

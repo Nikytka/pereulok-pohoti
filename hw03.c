@@ -19,6 +19,7 @@ int Split ( char* string, const char* del, char** tokens ) {
 
     return i;
 }
+<<<<<<< HEAD
 
 int main ( ) {
     
@@ -51,5 +52,24 @@ int main ( ) {
     fclose ( in1 );
     fclose ( in2 );
 
+=======
+int main () {
+    char str[] = "jop,d d-a hg- hghf=jnbv";
+    const char del[5] = " ,-=";
+  
+    // fixit: нужна константа с понятным именем для числа 10 
+    char** token = (char**)malloc(10 * sizeof(char*));
+  
+    // посмотрите, как работает strtok и память под что именно необходимо выделять
+    for(int j = 0; j < 10; j++)
+        token[j] = (char*) malloc(10 * sizeof(char));
+    Split (str, del, token);
+  
+    // fixit: ф-я split должна возвращать число найденных слов. вариант с числом 7 - не является общим решением.
+    for(int j = 0; j < 7; j++)
+        printf("%s\n", token[j]);
+  
+    // fixit: выделенную память надо освободить
+>>>>>>> 3631f8a4bf56b14192c0cccfd5bf338d36f1168d
     return 0;
 }

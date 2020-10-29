@@ -10,7 +10,7 @@ int main()
    char* array;
    int shmid;
    //int new = 1;
-   char pathname[] = "lw08.c";
+   char pathname[] = "memsep1.c";
    key_t key;
 
    if((key = ftok(pathname,0)) < 0){

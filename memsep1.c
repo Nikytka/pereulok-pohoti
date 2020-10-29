@@ -10,7 +10,7 @@ int main()
    int* array;
    int shmid;
    //int new = 1;
-   char pathname[] = "lw08.c";
+   char pathname[] = "memsep1.c";
    key_t key;
 
    if((key = ftok(pathname,0)) < 0){
@@ -23,7 +23,7 @@ int main()
         if ( errno != EEXIST ){
             printf ( "Can\'t create shared memory\n" );
             exit ( -1 );
-        } 
+        }
         else {
             if ( ( shmid = shmget ( key, 3000 * sizeof ( char ), 0 ) ) < 0 ){
                 printf ( "Can\'t find shared memory\n" );
@@ -38,7 +38,7 @@ int main()
       exit(-1);
    }
 
-   FILE* file = fopen( "lw08.c" , "r" );
+   FILE* file = fopen( "memsep1.c" , "r" );
    fread ( array, sizeof ( char ), 3000, file );
    fclose( file );
 

@@ -5,24 +5,14 @@
 #include <fstream>
 #include <vector>
 
-// FIXIT: очень много лишний пустых строк. давайте запустим автоформатирование, чтобы убрать их
-
-unsigned char low(unsigned char c) {
-
-    return std::tolower(c);
-
-}
-
-// FIXIT: числа на конце названий обычно не несут никакой полезной информации. давайте переименуем
-struct stat1 {
+struct st {
 
     int count;
     std::string word;
 
 };
 
-// FIXIT: название компаратора
-bool comp1(struct stat1 a, struct stat1 b) {
+bool comp(struct st a, struct st b) {
 
     return a.count > b.count;
 
@@ -30,26 +20,19 @@ bool comp1(struct stat1 a, struct stat1 b) {
 
 std::string prepare(std::string& s) {
 
-    // FIXIT: тут можно просто писать std::transform(...., std::tolower);
-    std::transform(s.begin(), s.end() - 1, s.begin(), low);
-
+    std::transform(s.begin(), s.end() - 1, s.begin(), std::tolower);
     const std::string del = ".,/\\?-=+)(*&^%$#@!";
 
     if (s.find_first_of(del, 0) != std::string::npos)
-
         s.pop_back();
 
     return s;
 }
 
-
 int main() {
 
     std::ifstream file("file.txt");
-
     std::map < std::string, int > freq;
-
-
 
     if (file.is_open()) {
 
@@ -58,16 +41,14 @@ int main() {
 
             file >> word;
             word = prepare(word);
-
             freq[word]++;
 
         }
 
         std::map < std::string, int >::iterator it = freq.begin();
+        std::vector < struct st > s;
 
-        std::vector < struct stat1 > s;
-
-        struct stat1 b = { 0, "" };
+        struct st b = { 0, "" };
         for (int i = 0; it != freq.end(); it++, i++) {
 
             s.push_back(b);
@@ -76,25 +57,10 @@ int main() {
 
         }
 
-        std::sort(s.begin(), s.end(), comp1);
+        std::sort(s.begin(), s.end(), comp);
 
-        std::vector < struct stat1 >::iterator it1 = s.begin();
-
-        for (int i = 0; it1 != s.end(); it1++, i++)
-
-            std::cout << s[i].word << " " << s[i].count << std::endl;
-        
-        /*
-        Еще можно писать либо вот так:
-        for (size_t i = 0; i < s.size(); ++i)
-            std::cout << s[i].word << " " << s[i].count << std::endl;
-        
-        Либо вот так:
-        for (const auto& stat : s)
-            std::cout << stat.word << " " << stat.count << std::endl;
-            
-        Оба варианта выглядят проще.
-        */
+        for (const auto& st : s)
+            std::cout << st.word << " " << st.count << std::endl;
 
         file.close();
     }

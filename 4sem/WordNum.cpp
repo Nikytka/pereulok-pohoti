@@ -5,12 +5,15 @@
 #include <fstream>
 #include <vector>
 
+// FIXIT: очень много лишний пустых строк. давайте запустим автоформатирование, чтобы убрать их
+
 unsigned char low(unsigned char c) {
 
     return std::tolower(c);
 
 }
 
+// FIXIT: числа на конце названий обычно не несут никакой полезной информации. давайте переименуем
 struct stat1 {
 
     int count;
@@ -18,6 +21,7 @@ struct stat1 {
 
 };
 
+// FIXIT: название компаратора
 bool comp1(struct stat1 a, struct stat1 b) {
 
     return a.count > b.count;
@@ -26,6 +30,7 @@ bool comp1(struct stat1 a, struct stat1 b) {
 
 std::string prepare(std::string& s) {
 
+    // FIXIT: тут можно просто писать std::transform(...., std::tolower);
     std::transform(s.begin(), s.end() - 1, s.begin(), low);
 
     const std::string del = ".,/\\?-=+)(*&^%$#@!";
@@ -78,6 +83,18 @@ int main() {
         for (int i = 0; it1 != s.end(); it1++, i++)
 
             std::cout << s[i].word << " " << s[i].count << std::endl;
+        
+        /*
+        Еще можно писать либо вот так:
+        for (size_t i = 0; i < s.size(); ++i)
+            std::cout << s[i].word << " " << s[i].count << std::endl;
+        
+        Либо вот так:
+        for (const auto& stat : s)
+            std::cout << stat.word << " " << stat.count << std::endl;
+            
+        Оба варианта выглядят проще.
+        */
 
         file.close();
     }

@@ -1,2 +1,0 @@
-Cache hits: 2019
-Cache coeffs: 0.359381

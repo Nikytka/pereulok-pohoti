@@ -1,0 +1,14 @@
+﻿  Default_project_template.cpp
+C:\Users\necha\source\repos\Monte_Carlo\Monte_Carlo\Default_project_template.cpp(18,19): warning C4244: инициализация: преобразование "_Rep" в "unsigned int", возможна потеря данных
+          with
+          [
+              _Rep=__int64
+          ]
+C:\Users\necha\source\repos\Monte_Carlo\Monte_Carlo\Default_project_template.cpp(45,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\necha\source\repos\Monte_Carlo\Monte_Carlo\Default_project_template.cpp(50,87): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+  Создание кода
+  1 of 898 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  Monte_Carlo.vcxproj -> C:\Users\necha\source\repos\Monte_Carlo\\Bin\Release\Monte_Carlo.exe

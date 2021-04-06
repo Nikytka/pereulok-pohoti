@@ -1,0 +1,12 @@
+﻿  SFML-Template.cpp
+C:\Users\necha\source\repos\Musical_ketboard\Musical_ketboard\SFML-Template.cpp(21,40): warning C4244: аргумент: преобразование "double" в "_Ty", возможна потеря данных
+          with
+          [
+              _Ty=sf::Int16
+          ]
+  Создание кода
+  0 of 208 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  Musical_ketboard.vcxproj -> C:\Users\necha\source\repos\Musical_ketboard\Bin\Release\Musical_ketboard.exe

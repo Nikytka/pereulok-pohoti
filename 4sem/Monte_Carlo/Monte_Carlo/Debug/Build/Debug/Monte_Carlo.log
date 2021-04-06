@@ -1,9 +1,0 @@
-﻿  Default_project_template.cpp
-C:\Users\necha\source\repos\Monte_Carlo\Monte_Carlo\Default_project_template.cpp(11,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\Users\necha\source\repos\Monte_Carlo\Monte_Carlo\Default_project_template.cpp(14,34): warning C4244: =: преобразование "float" в "_Ty", возможна потеря данных
-          with
-          [
-              _Ty=int
-          ]
-C:\Users\necha\source\repos\Monte_Carlo\Monte_Carlo\Default_project_template.cpp(22,33): warning C4305: аргумент: усечение из "double" в "float"
-  Monte_Carlo.vcxproj -> C:\Users\necha\source\repos\Monte_Carlo\\Bin\Debug\Monte_Carlo.exe
